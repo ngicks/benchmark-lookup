@@ -1,4 +1,38 @@
-# Result
+# beanchmark-lookup
+
+look up comparision. Map v.s. Slice.
+
+## Comparision
+
+Slice lookup uses dedicated function, that looks like
+
+```go
+func LookUpSlice[T comparable](tab []T, target T) int {
+	for idx, val := range tab {
+		if val == target {
+			return idx
+		}
+	}
+
+	return -1
+}
+```
+
+Map lookup uses simply index access to map, that looks like
+
+```go
+
+_, ok := someMap["someIndex"]
+if ok {
+    // use value
+}
+```
+
+Those should be what you write once a week.
+
+Each benchmark function does repeative n times of lookup. That significantly increases test time so that difference become clear and noticeable.
+
+## Result
 
 ```
 $ go test -benchmem -run=^$ -bench ^Benchmark github.com/ngicks/benchmark-lookup
