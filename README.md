@@ -1,4 +1,4 @@
-# beanchmark-lookup
+# benchmark-lookup
 
 look up comparision. Map v.s. Slice.
 
