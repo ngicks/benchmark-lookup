@@ -8,6 +8,10 @@ import (
 	benchmarklookup "github.com/ngicks/benchmark-lookup"
 )
 
+func outlet(v any) {
+
+}
+
 func fillSlice(target []string) {
 	for i := 0; i < len(target); i++ {
 		target[i] = strconv.FormatInt(int64(i), 10)
@@ -41,9 +45,7 @@ func BenchmarkLookUpSlice1(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -54,9 +56,7 @@ func BenchmarkLookUpSlice5(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -66,9 +66,7 @@ func BenchmarkLookUpSlice10(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -79,9 +77,7 @@ func BenchmarkLookUpSlice15(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -92,9 +88,7 @@ func BenchmarkLookUpSlice25(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -104,9 +98,7 @@ func BenchmarkLookUpSlice50(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -117,9 +109,7 @@ func BenchmarkLookUpSlice100(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -130,9 +120,7 @@ func BenchmarkLookUpSlice1000(b *testing.B) {
 	fillSlice(sl)
 	testFn := func(i int) {
 		idx := benchmarklookup.LookUpSlice(sl, randIndex[i])
-		if idx >= 0 {
-			//
-		}
+		outlet(idx)
 	}
 	b.ResetTimer()
 	repeatNTime(1000, testFn)
@@ -144,7 +132,7 @@ func BenchmarkLookUpMap1(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 
@@ -159,7 +147,7 @@ func BenchmarkLookUpMap5(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 	b.ResetTimer()
@@ -173,7 +161,7 @@ func BenchmarkLookUpMap10(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 	b.ResetTimer()
@@ -188,7 +176,7 @@ func BenchmarkLookUpMap15(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 	b.ResetTimer()
@@ -203,7 +191,7 @@ func BenchmarkLookUpMap50(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 	b.ResetTimer()
@@ -217,7 +205,7 @@ func BenchmarkLookUpMap100(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 	b.ResetTimer()
@@ -232,7 +220,7 @@ func BenchmarkLookUpMap1000(b *testing.B) {
 	testFn := func(i int) {
 		_, ok := mm[randIndex[i]]
 		if ok {
-			//
+			outlet(i)
 		}
 	}
 	b.ResetTimer()
